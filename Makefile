@@ -9,4 +9,8 @@ include .make/Makefile.inc
 
 NS              ?= default
 APP             ?= app
+DB_USER         ?= sql
+DB_PASS         ?= changeme
+DB_NAME         ?= testing
+DB_EXTENSION    ?= pg_trgm
 export

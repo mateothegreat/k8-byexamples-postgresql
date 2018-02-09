@@ -18,17 +18,38 @@
 ## Usage
 
 ```sh
+$ make help
 
+Usage:
+
+  make <target>
+
+Targets:
+
+  manifests            Output manifests detected (used with make install, delete, get, describe, etc)
+  install              Installs manifests to kubernetes using kubectl apply (make manifests to see what will be installed)
+  delete               Deletes manifests to kubernetes using kubectl delete (make manifests to see what will be installed)
+  get                  Retrieves manifests to kubernetes using kubectl get (make manifests to see what will be installed)
+  describe             Describes manifests to kubernetes using kubectl describe (make manifests to see what will be installed)
+  logs                 Find first pod and follow log output
 ```
 
 ## Install
 
 ```sh
+$ make install
 
+[ INSTALLING MANIFESTS/DEPLOYMENT.YAML ]: deployment "gitlab-postgresql" created
+[ INSTALLING MANIFESTS/PERSISTENTVOLUMECLAIM.YAML ]: persistentvolumeclaim "postgresql-persistent-storage" unchanged
+[ INSTALLING MANIFESTS/SERVICE.YAML ]: service "postgresql" created
 ```
 
 ## Delete
 
 ```sh
+$ make delete
 
+[ DELETING MANIFESTS/DEPLOYMENT.YAML ]: deployment "gitlab-postgresql" deleted
+[ DELETING MANIFESTS/PERSISTENTVOLUMECLAIM.YAML ]: persistentvolumeclaim "postgresql-persistent-storage" deleted
+[ DELETING MANIFESTS/SERVICE.YAML ]: service "postgresql" deleted
 ```
